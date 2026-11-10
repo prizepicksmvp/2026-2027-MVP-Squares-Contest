@@ -237,7 +237,6 @@
   }
   .tag.week{background:var(--purple-700); color:var(--purple-100);}
   .tag.tnf{background:var(--blue); color:var(--black);}
-  .tag.mnf{background:var(--purple-400); color:var(--white);}
   .tag.status-upcoming{background:var(--purple-800); color:var(--purple-200); border:1px solid var(--purple-600);}
   .tag.status-live{background:var(--yellow); color:var(--black);}
   .tag.status-final{background:var(--green); color:var(--black);}
@@ -320,36 +319,6 @@
   .setup-banner p{font-size:13.5px; line-height:1.6; color:var(--purple-100);}
   .setup-banner code{background:var(--black); padding:2px 6px; border-radius:4px; font-size:12.5px;}
 
-  .rewards{
-    background:var(--purple-900);
-    padding:88px 0 96px;
-    border-top:1px solid var(--purple-700);
-  }
-  .rewards .section-lead{margin-bottom:44px;}
-  .reward-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .reward-card{
-    background:var(--purple-800);
-    border:1px solid var(--purple-600);
-    border-radius:16px;
-    padding:28px 22px;
-    text-align:center;
-  }
-  .reward-when{
-    font-family:var(--font-mono); font-size:11.5px; font-weight:700;
-    letter-spacing:0.08em; text-transform:uppercase; color:var(--purple-200);
-    margin-bottom:16px;
-  }
-  .reward-pill{
-    display:inline-block;
-    font-size:16px; font-weight:800;
-    color:var(--black); background:var(--yellow);
-    padding:10px 16px; border-radius:100px;
-  }
-  .reward-pill.bonus{background:var(--green);}
-  .reward-footnote{
-    margin-top:24px; font-size:13px; color:var(--purple-300); font-style:italic;
-  }
-
   footer{
     padding:36px 0 60px; text-align:center; color:var(--purple-600); font-size:13px;
   }
@@ -399,13 +368,11 @@
       padding-bottom:6px; -webkit-overflow-scrolling:touch;
     }
     .quarter-panel .win-slot{flex:0 0 148px;}
-    .reward-grid{grid-template-columns:repeat(2,1fr);}
   }
   @media (max-width:560px){
     .steps{grid-template-columns:1fr;}
     .quarters{grid-template-columns:1fr;}
     .hero{padding:64px 0 48px;}
-    .reward-grid{grid-template-columns:1fr;}
     .example-visual{overflow-x:auto;}
     .mini-grid{gap:2px;}
     .mini-cell{font-size:8.5px;}
@@ -424,11 +391,11 @@
   <div class="wrap hero-inner">
     <div class="eyebrow"><span class="dot"></span>PrizePicks MVP Program</div>
     <h1 class="headline">The board's set.<br>Your square's <em>here</em>.</h1>
-    <p class="hero-sub">Every Thursday night through Week 18, we're running Squares for our MVPs. No entry, no picks to make — just find your name and watch the score.</p>
+    <p class="hero-sub">Every Thursday night from Week 10 through Week 18, we're running Squares for our MVPs. No entry, no picks to make — just find your name and watch the score.</p>
     <div class="hero-meta">
-      <div class="hero-meta-item"><span class="num">11</span><span class="lbl">Weeks · 10–18</span></div>
-      <div class="hero-meta-item"><span class="num">2</span><span class="lbl">Games / week</span></div>
-      <div class="hero-meta-item"><span class="num">4</span><span class="lbl">Rewards / board</span></div>
+      <div class="hero-meta-item"><span class="num">9</span><span class="lbl">Weeks · 10–18</span></div>
+      <div class="hero-meta-item"><span class="num">1</span><span class="lbl">Game / week</span></div>
+      <div class="hero-meta-item"><span class="num">4</span><span class="lbl">Winners / board</span></div>
     </div>
     <a href="#boards" class="hero-cta">Find your squares ↓</a>
   </div>
@@ -483,7 +450,7 @@
       <div class="qcard">
         <div class="qlabel">End of Q1</div>
         <h4>First Quarter</h4>
-        <p>Locked in the moment the Q1 clock hits zero. First reward of the night goes out here.</p>
+        <p>Locked in the moment the Q1 clock hits zero. First winner of the night is decided here.</p>
       </div>
       <div class="qcard">
         <div class="qlabel">End of Q2</div>
@@ -498,7 +465,7 @@
       <div class="qcard">
         <div class="qlabel">Final Score</div>
         <h4>Game Winner</h4>
-        <p>The biggest reward of the night, based on the final score when the clock hits 0:00.</p>
+        <p>The last winner of the night, based on the final score when the clock hits 0:00.</p>
       </div>
     </div>
 
@@ -520,11 +487,6 @@
 
     <div class="controls">
       <select id="weekFilter"><option value="all">All Weeks</option></select>
-      <select id="gameFilter">
-        <option value="all">All Games</option>
-        <option value="TNF">Thursday Night</option>
-        <option value="MNF">Monday Night</option>
-      </select>
       <input type="text" id="nameSearch" placeholder="Type your name to find your squares…">
       <span class="find-count" id="findCount"></span>
     </div>
@@ -532,34 +494,6 @@
     <div id="setupBanner" style="display:none;" class="setup-banner"></div>
     <div id="boardsOuter" class="board-grid-outer"></div>
     <div id="emptyState" class="empty-state" style="display:none;">No boards match those filters yet.</div>
-  </div>
-</section>
-
-<section class="rewards">
-  <div class="wrap">
-    <div class="section-kicker">What's Up For Grabs</div>
-    <h2 class="section-title" style="color:var(--white);">Every quarter pays.</h2>
-    <p class="section-lead" style="color:var(--purple-200);">Four scoring moments, four winners, every single board. Rewards below are placeholders while we lock in the final lineup.</p>
-
-    <div class="reward-grid">
-      <div class="reward-card">
-        <div class="reward-when">1st Quarter</div>
-        <div class="reward-pill">Protected Play</div>
-      </div>
-      <div class="reward-card">
-        <div class="reward-when">Halftime</div>
-        <div class="reward-pill">Protected Play</div>
-      </div>
-      <div class="reward-card">
-        <div class="reward-when">3rd Quarter</div>
-        <div class="reward-pill bonus">Bonus Lineup</div>
-      </div>
-      <div class="reward-card">
-        <div class="reward-when">End of Game</div>
-        <div class="reward-pill bonus">Bonus Lineup</div>
-      </div>
-    </div>
-    <p class="reward-footnote">Placeholder rewards shown above — final details drop before Week 8.</p>
   </div>
 </section>
 
@@ -593,7 +527,7 @@
    Two Google Sheet tabs, published to web as CSV:
 
    TAB 1 — "Boards" (one row per board):
-     board_id, week, game_day (TNF/MNF), board_label, team_x, team_y,
+     board_id, week, game_day (TNF), board_label, team_x, team_y,
      col_order, row_order, status (upcoming/live/final),
      q1_x, q1_y, q2_x, q2_y, q3_x, q3_y, final_x, final_y
 
@@ -607,6 +541,10 @@
 
    board_id must match between the two tabs. Add/remove boards freely — the page
    re-renders from whatever rows exist, no code changes needed.
+
+   CONTEST SCOPE: Thursday Night Football only, Weeks 10–18. Any rows in the
+   Boards tab outside that scope (other weeks, or game_day other than TNF) are
+   ignored by the page — see SEASON_WEEKS / GAME_DAYS below.
    ========================================================================= */
 
 const STORAGE_KEY = 'sheet-config';
@@ -645,17 +583,15 @@ function csvToObjects(text){
 /* ---------------- Demo data (shown until a real sheet is connected) ---------------- */
 function buildDemoData(){
   const demoBoards = [
-    {board_id:'W8_TNF', week:'8', game_day:'TNF', board_label:'', team_x:'Jets', team_y:'Patriots',
+    {board_id:'W10_TNF', week:'10', game_day:'TNF', board_label:'', team_x:'Jets', team_y:'Patriots',
       col_order:'3,7,0,9,2,5,8,1,4,6', row_order:'1,4,9,0,6,3,8,2,7,5',
       status:'final', q1_x:'7', q1_y:'3', q2_x:'10', q2_y:'10', q3_x:'17', q3_y:'13', final_x:'24', final_y:'20'},
-    {board_id:'W8_MNF', week:'8', game_day:'MNF', board_label:'', team_x:'Eagles', team_y:'Cowboys',
-      col_order:'', row_order:'', status:'upcoming', q1_x:'',q1_y:'',q2_x:'',q2_y:'',q3_x:'',q3_y:'',final_x:'',final_y:''},
   ];
   const names = ['Alex R.','Jordan P.','Sam T.','Casey M.','Drew L.','Morgan K.','Taylor B.','Riley S.','Jamie H.','Quinn D.'];
   const demoSquares = [];
   for(let r=0;r<10;r++){
     for(let c=0;c<10;c++){
-      demoSquares.push({board_id:'W8_TNF', row_index:r, col_index:c, mvp_name: names[(r*7+c*3)%names.length] + ' ' + (r*10+c+1)});
+      demoSquares.push({board_id:'W10_TNF', row_index:r, col_index:c, mvp_name: names[(r*7+c*3)%names.length] + ' ' + (r*10+c+1)});
     }
   }
   return {boards:demoBoards, squares:demoSquares};
@@ -713,11 +649,17 @@ async function loadData(){
   usingDemoData = true;
 }
 
-const SEASON_WEEKS = Array.from({length: 11}, (_, i) => 8 + i); // Weeks 8–18
-const GAME_DAYS = ['TNF', 'MNF'];
-const GAME_DAY_ORDER = {TNF: 0, MNF: 1}; // Thursday airs before Monday within an NFL week
+/* Contest scope: Thursday Night Football only, Weeks 10–18. */
+const SEASON_WEEKS = Array.from({length: 9}, (_, i) => 10 + i); // Weeks 10–18
+const GAME_DAYS = ['TNF'];
+const GAME_DAY_ORDER = {TNF: 0};
 
 function fillMissingSlots(){
+  // Drop any sheet rows outside the contest scope (other weeks / non-TNF games)
+  boardsData = boardsData.filter(b =>
+    SEASON_WEEKS.includes(Number(b.week)) && GAME_DAYS.includes(b.game_day)
+  );
+
   const existing = new Set(boardsData.filter(b => !b.isPlaceholder).map(b => `${b.week}|${b.game_day}`));
   SEASON_WEEKS.forEach(w => {
     GAME_DAYS.forEach(g => {
@@ -741,7 +683,7 @@ function renderPlaceholderCard(board){
   card.innerHTML = `
     <div class="board-tags">
       <span class="tag week">Week ${escapeHtml(board.week)}</span>
-      <span class="tag ${board.game_day === 'TNF' ? 'tnf' : 'mnf'}">${board.game_day === 'TNF' ? 'Thursday Night' : 'Monday Night'}</span>
+      <span class="tag tnf">Thursday Night</span>
       <span class="tag status-upcoming">Not Posted Yet</span>
     </div>
     <div class="placeholder-body">
@@ -850,7 +792,7 @@ function renderBoardCard(board){
       <div>
         <div class="board-tags">
           <span class="tag week">Week ${escapeHtml(board.week)}</span>
-          <span class="tag ${board.game_day === 'TNF' ? 'tnf' : 'mnf'}">${board.game_day === 'TNF' ? 'Thursday Night' : 'Monday Night'}</span>
+          <span class="tag tnf">Thursday Night</span>
           <span class="tag ${statusClass}">${escapeHtml(statusLabel)}</span>
         </div>
         <div class="matchup">${escapeHtml(board.team_x)} <span>vs</span> ${escapeHtml(board.team_y)}${board.board_label ? ' · ' + escapeHtml(board.board_label) : ''}</div>
@@ -891,11 +833,9 @@ function renderBoards(){
   outer.innerHTML = '';
 
   const weekVal = document.getElementById('weekFilter').value;
-  const gameVal = document.getElementById('gameFilter').value;
 
   const filtered = boardsData.filter(b => {
     if(weekVal !== 'all' && String(b.week) !== String(weekVal)) return false;
-    if(gameVal !== 'all' && b.game_day !== gameVal) return false;
     return true;
   });
 
@@ -984,7 +924,6 @@ document.getElementById('modalSave').addEventListener('click', async () => {
 });
 
 document.getElementById('weekFilter').addEventListener('change', renderBoards);
-document.getElementById('gameFilter').addEventListener('change', renderBoards);
 document.getElementById('nameSearch').addEventListener('input', applyNameSearch);
 
 /* ---------------- Init ---------------- */
